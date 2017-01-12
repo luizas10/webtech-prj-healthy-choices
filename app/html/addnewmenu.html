@@ -1,0 +1,41 @@
+<div>
+	<h1>Add a new menu</h1>
+	<div class="form-group">
+		<form action="/menus/" method="post" name="addForm">
+			<label for="title">Title</label>
+			<input type="text" class="form-control" id="title" name="title" ng-model="title" required/>
+			<p><span ng-show="addForm.title.$touched && addForm.title.$invalid">Trebuie sa adaugi un titlu meniului.</span></p>
+			
+			<label for="mic_dejun">Mic dejun</label>
+			<input type="text" class="form-control" id="mic_dejun" name="mic_dejun" ng-model="mic_dejun" required/>
+			<p><span ng-show="addForm.mic_dejun.$touched && addForm.mic_dejun.$invalid">Trebuie sa adaugi mic-dejun.In cazul in care nu ai mancat nimic, adauga "-"!</span></p>
+			
+			<label for="gustare1">Gustarea 1:</label>
+			<input type="text" class="form-control" id="gustare1" name="gustare1" ng-model="gustare1" required/>
+			<p><span ng-show="addForm.gustare1.$touched && addForm.gustare1.$invalid">Trebuie sa adaugi o gustare.In cazul in care nu ai mancat nimic, adauga "-"!</span></p>
+			
+			
+			<label for="pranz">Pranz</label>
+			<input type="text" class="form-control" id="pranz" name="pranz" ng-model="pranz" required/>
+			<p><span ng-show="addForm.pranz.$touched && addForm.pranz.$invalid">Trebuie sa adaugi pranzul.In cazul in care nu ai mancat nimic, adauga "-"!</span></p>
+			
+			<label for="gustare2">Gustarea 2:</label>
+			<input type="text" class="form-control" id="gustare2" name="gustare2" ng-model="gustare2" required/>
+			<p><span ng-show="addForm.gustare2.$touched && addForm.gustare2.$invalid">Trebuie sa adaugi o gustare.In cazul in care nu ai mancat nimic, adauga "-"!</span></p>
+			
+			
+			<label for="cina">Cina</label>
+			<input type="text" class="form-control" id="cina" name="cina" ng-model="cina" required/>
+			<p><span ng-show="addForm.cina.$touched && addForm.cina.$invalid">Trebuie sa adaugi cina.In cazul in care nu ai mancat nimic, adauga "-"!</span></p>
+			
+			
+			<label for="data_meniu">Data Meniu</label>
+			<input type="text" class="form-control" id="data_meniu" name="data_meniu" ng-model="val"></select>
+		
+			<label for="calorii">Calorii</label>
+			<input type="text" class="form-control" id="calorii" name="calorii" ng-model="calorii"></select>
+			
+			<input type="submit" value="Add a new menu" />
+		</form>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<div>
+	<h1>Edit menu</h1>
+	<div>
+    <select size="6" class="form-control" ng-model="x.menu_id" required>
+	
+		<option ng-repeat="x in menus" value="{{x.menu_id}}" ng-click="editItem(x);">
+			{{x.title}}
+			<!--<a ng-click="editItem(x);">edit</a>-->
+		</option>
+                    
+    </select>
+
+
+<br><br>
+
+
+</div>
+
+	<div class="form-group" id="formChangeMenu" ng-show="currentItem">
+		<form  >
+			<label for="title">Title</label>
+			<input type="text" class="form-control" id="title" name="title" ng-model="currentItem.title" required/>
+		
+			<label for="mic_dejun">Mic dejun</label>
+			<input type="text" class="form-control" id="mic_dejun" name="mic_dejun" ng-model="currentItem.mic_dejun" required/>
+			
+			
+			<label for="gustare1">Gustarea 1:</label>
+			<input type="text" class="form-control" id="gustare1" name="gustare1" ng-model="currentItem.gustare1" required/>
+			
+			
+			
+			<label for="pranz">Pranz</label>
+			<input type="text" class="form-control" id="pranz" name="pranz" ng-model="currentItem.pranz" required/>
+		
+			<label for="gustare2">Gustarea 2:</label>
+			<input type="text" class="form-control" id="gustare2" name="gustare2" ng-model="currentItem.gustare2" required/>
+			
+			
+			
+			<label for="cina">Cina</label>
+			<input type="text" class="form-control" id="cina" name="cina" ng-model="currentItem.cina" required/>
+			
+			
+			<label for="data_meniu">Data Meniu</label>
+			<input type="text" class="form-control" id="data_meniu" name="data_meniu" ng-model="currentItem.data_meniu" >
+			
+			<label for="calorii">Calorii</label>
+			<input type="text" class="form-control" id="calorii" name="calorii" ng-model="currentItem.calorii" >
+			
+			<button ng-click="updateMenu()">Change</button>
+		</form>
+	</div>
+</div>
+</div>

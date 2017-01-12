@@ -1,0 +1,5 @@
+<div id="viewtableDies" ng-controller="dietsController">
+    <select size="6" class="form-control" ng-model="x.diet_id" required>
+        <option ng-repeat="x in diets" value="{{x.diet_id}}">{{x.title}}</option>
+    </select>
+</div>

@@ -1,0 +1,25 @@
+<div>
+	<h1>Add a new resource</h1>
+	<div class="form-group">
+		<form action="/resources/" method="post" name="addForm">
+			<label for="title">Title</label>
+			<input type="text" class="form-control" id="title" name="title" ng-model="title" required/>
+			<p><span ng-show="addForm.title.$touched && addForm.title.$invalid">Adauga un titlu resursei.</span></p>
+			
+			<label for="description">Description</label>
+			<input type="text" class="form-control" id="description" name="description" ng-model="description" required/>
+			<p><span ng-show="addForm.description.$touched && addForm.description.$invalid">Autorul este obligatoriu.</span></p>
+			
+			<label for="url">URL</label>
+			<input type="text" class="form-control" id="url" name="url" ng-model="url" required/>
+			<p><span ng-show="addForm.url.$touched && addForm.url.$invalid">Autorul este obligatoriu.</span></p>
+			
+			<label for="DietDietId">Diet</label>
+			<select size="6" class="form-control" name="resources.DietDietId "ng-model="diet_id" ng-controller="dietsController" required>
+			<option ng-repeat="x in diets" value="{{x.diet_id}}">{{x.diet_id}} {{x.title}}</option>
+            </select>
+
+		
+			<input type="submit" value="Add a resource" />
+		</form>
+	</div>

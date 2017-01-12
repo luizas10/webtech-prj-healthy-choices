@@ -1,0 +1,10 @@
+<div>
+    <select size="6" class="form-control" ng-model="x.menu_id" required>
+<option ng-repeat="x in menus" value="{{x.menu_id}}">{{x.title}}</option>
+                    	</select>
+
+</div>
+<br><br>
+<button class="btn btn-danger" ng-click="deleteMenu()" customAlert>Delete<span class="glyphicon glyphicon-remove"></span></button>
+
+</div>

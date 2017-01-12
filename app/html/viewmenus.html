@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            
+        </script>
+    </head>
+<div id="viewtable" ng-controller="menusController">
+    <table class="table" ng-model="x.menu_id">
+        <tr>
+  
+            <th>Title</th>
+            <th>Mic_dejun</th>
+            <th>Gustare 1:</th>
+            <th>Pranz</th>
+            <th>Gustare 2:</th>
+            <th>Cina</th>
+            <th>Calorii</th>
+        </tr>
+        <tr ng-repeat="x in menus">
+        
+            <td>{{x.title}}</td>
+            <td>{{x.mic_dejun}}</td>
+            <td>{{x.gustare1}}</td>
+            <td>{{x.pranz}}</td>
+            <td>{{x.gustare2}}</td>
+            <td>{{x.cina}}</td>
+            <td>{{x.calorii}}</td>
+        </tr>
+    </table>
+</div>
+</html>
