@@ -88,4 +88,8 @@ mainApp.controller('dietsController', ['$scope', '$http', function($scope, $http
   });
  }]);
 
- 
+ mainApp.controller('resourcesController', ['$scope', '$http', function($scope, $http) {
+  $http.get('/resources').then(function(response) {
+   $scope.resources = response.data;
+  });
+ }]);

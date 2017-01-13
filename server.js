@@ -4,6 +4,9 @@ var cors = require("cors");
 var Sequelize = require("sequelize");
 var models  = require('./models');
 
+
+var sequelize = new Sequelize('mydb','luizas10','');
+
 var app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -13,8 +16,11 @@ app.use(nodeadmin(app));
 app.use('/admin', express.static('admin'));
 
 var Menu = models.Menu;
-var Diet = models.Diet;
-var Resource = models.Resource;
+
+var entities = require('./routes/entities.js');
+
+ 
+
 
 // REST methods
 app.use(require("./routes/menus.js"));
@@ -26,6 +32,15 @@ app.use(express.static('app'));
 var sequelize = new Sequelize('mydb', 'luizas10', '', {
    dialect: 'mysql',
    port: 3306
+});
+
+entities.sequelize.sync().then(function() {
+    app.listen(3306, function(err) {
+        if (err) console.log(err);
+
+        console.log('running server on port ' + 3306);
+    })
+   
 });
 
 

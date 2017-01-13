@@ -1,44 +1,35 @@
 'use strict'
 module.exports = function(sequelize, DataTypes) {
-
-    var Diet = sequelize.define('Diet', {
-        diet_id: {
-            type: DataTypes.INTEGER,
-            field: 'diet_id',
-            primaryKey: true
-        },
-        title: {
-            type: DataTypes.STRING,
-            field: 'title'
-        },
-        author: {
-            type: DataTypes.STRING,
-            field: 'author'
-        },
-        type: {
-            type: DataTypes.STRING,
-            field: 'type'
-        },
-        year: {
-            type: DataTypes.INTEGER,
-            field: 'year'
-        },
-        content:{
-            type :DataTypes.STRING,
-            field: 'content'
-        }
-    }, 
-    
-    {
-        timestamps: false,
-        tableName: 'diets',
-         classMethods: {
-             associate: function(models) {
-
-                 Diet.hasMany(models.Resource);
-             }
-         }
-    });
-
-    return Diet;
-}
+        return sequelize.define('Diet', {
+                                diet_id: {
+                                                type: DataTypes.INTEGER(8),
+                                              //  allowNull: false,
+                                                primaryKey: true,
+                                                autoIncrement: true
+                                },
+                                title: {
+                                                type: DataTypes.STRING,
+                                                allowNull: false
+                                },
+                                author: {
+                                                type: DataTypes.STRING,
+                                                allowNull: false
+                                },
+                                type: {
+                                                type: DataTypes.STRING,
+                                                allowNull: false
+                                },
+                                year: {
+                                                type: DataTypes.INTEGER(4),
+                                                allowNull: false
+                                },
+                                content: {
+                                                type: DataTypes.TEXT,
+                                                allowNull: false
+                                }
+                                
+                }, {
+                                tableName: 'diets',
+                                 timestamps: false
+                });
+};

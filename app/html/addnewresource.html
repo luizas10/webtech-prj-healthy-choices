@@ -14,8 +14,8 @@
 			<input type="text" class="form-control" id="url" name="url" ng-model="url" required/>
 			<p><span ng-show="addForm.url.$touched && addForm.url.$invalid">Autorul este obligatoriu.</span></p>
 			
-			<label for="DietDietId">Diet</label>
-			<select size="6" class="form-control" name="resources.DietDietId "ng-model="diet_id" ng-controller="dietsController" required>
+			<label for="diet_id">Diet</label>
+			<select size="6" class="form-control" name="diet_id"ng-model="diet_id" ng-controller="dietsController" required>
 			<option ng-repeat="x in diets" value="{{x.diet_id}}">{{x.diet_id}} {{x.title}}</option>
             </select>
 

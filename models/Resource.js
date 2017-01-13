@@ -1,32 +1,36 @@
 'use strict'
+
 module.exports = function(sequelize, DataTypes) {
-
-    var Resource = sequelize.define('Resource', {
-        title: {
-            type: DataTypes.STRING,
-            field: 'title'
-        },
-        description: {
-            type: DataTypes.STRING,
-            field: 'description'
-        },
-        url: {
-            type: DataTypes.STRING,
-            field: 'url'
-        },
-    }, {
-        timestamps: false,
-        tableName: 'resources',
-         classMethods: {
-             associate: function(models) {
-                 Resource.belongsTo(models.Diet, {
-                     onDelete: "CASCADE",
-                 });
-             }
-         }
-
-    });
-    
-
-    return Resource;
-}
+                return sequelize.define('Resource', {
+                                resource_id: {
+                                                type: DataTypes.INTEGER(8),
+                                                allowNull: false,
+                                                primaryKey: true,
+                                                autoIncrement: true
+                                },
+                                diet_id: {
+                                                type: DataTypes.INTEGER(8),
+                                                allowNull: false,
+                                                references: {
+                                                                model: 'Diet',
+                                                                key: 'diet_id'
+                                                }
+                                },
+                                title: {
+                                                type: DataTypes.STRING,
+                                                allowNull: true
+                                },
+                                description: {
+                                                type: DataTypes.STRING,
+                                                allowNull: true
+                                },
+                                url: {
+                                                type: DataTypes.TEXT,
+                                                allowNull: true
+                                }
+                }, {
+                                tableName: 'resources',
+                                 timestamps: false
+                });
+};
+ 
