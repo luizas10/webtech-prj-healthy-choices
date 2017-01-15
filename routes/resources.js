@@ -19,5 +19,18 @@ router.get('/resources', function(request, response) {
     });
 });
 
+router.get('/resourcesByDietController/:diet_id', function(request, response) {
+     Resource.findAll({
+         where:{
+            diet_id:request.params.diet_id
+         }
+    }).then(function(resources) {
+        response.status(200).send(resources);
+    });
+   
+});
+
+
+
 
 module.exports = router;

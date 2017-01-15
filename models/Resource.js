@@ -32,5 +32,6 @@ module.exports = function(sequelize, DataTypes) {
                                 tableName: 'resources',
                                  timestamps: false
                 });
+                
 };
  

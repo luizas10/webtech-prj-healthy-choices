@@ -21,7 +21,7 @@ router.get('/menus', function(request, response) {
 
 // returns one menu by menu_id
 router.get('/menus/:menu_id', function(request, response) {
-    Menu.findById(request.params.book_id).then(function(book) {
+    Menu.findById(request.params.menu_id).then(function(menu) {
         if (menu) {
             response.status(200).send(menu);
         }
@@ -31,7 +31,7 @@ router.get('/menus/:menu_id', function(request, response) {
     });
 });
 
-// update a specific book by book_id
+
 router.put('/menus/:menu_id', function(request, response) {
     Menu
         .findById(request.params.menu_id)
@@ -53,7 +53,7 @@ router.put('/menus/:menu_id', function(request, response) {
         });
 });
 
-// delete an book by book_id
+
 router.delete('/menus/:menu_id', function(req, res) {
     Menu
         .findById(req.params.menu_id)

@@ -31,6 +31,31 @@ router.get('/diets/:diet_id', function(request, response) {
     });
 });
 
+// router.get('/resourcesByDietController/:diet_id', function(request, response) {
+//      Diet.findAll({
+//         where:{
+//            
+//         }
+//     }).then(function(diets) {
+//         response.status(200).send(diets);
+//     });
+    
+    
+    
+    
+//     var diet = Diet.findById(request.params.diet_id);
+//     vdiet.getResouceForDiet(diet);
+//     // diet.ge
+//     // Diet.findResourcesForDiet(diet).then(function(resources) {
+//     //     if (diet) {
+//     //         response.status(200).send(resources);
+//     //     }
+//     //     else {
+//     //         response.status(404).send();
+//     //     }
+//     // });
+// });
+
 
 
 module.exports = router;

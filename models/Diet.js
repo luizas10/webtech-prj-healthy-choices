@@ -30,6 +30,7 @@ module.exports = function(sequelize, DataTypes) {
                                 
                 }, {
                                 tableName: 'diets',
-                                 timestamps: false
+                                timestamps: false
                 });
+             
 };

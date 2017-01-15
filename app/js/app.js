@@ -28,7 +28,7 @@ mainApp.config(function($routeProvider) {
   }).
   when('/viewresources', {
    templateUrl: 'html/viewresources.html',
-   controller: 'dietsController'
+   controller: 'resourcesByDietController'
    
   }).
   otherwise({
@@ -76,8 +76,6 @@ mainApp.config(function($routeProvider) {
    })
    $scope.bookEdit = "";
   }
-  
-   
  
  
  }]);
@@ -92,4 +90,13 @@ mainApp.controller('dietsController', ['$scope', '$http', function($scope, $http
   $http.get('/resources').then(function(response) {
    $scope.resources = response.data;
   });
+ }]);
+ 
+mainApp.controller('resourcesByDietController', ['$scope', '$http', function($scope, $http) {
+   $scope.getResources = function(item){
+       $http.get('/resourcesByDietController/' + item.diet_id).then(function(response) {
+         $scope.resources = response.data;
+      });
+   
+   }  
  }]);
