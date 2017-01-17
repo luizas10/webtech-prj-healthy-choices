@@ -20,7 +20,8 @@ mainApp.config(function($routeProvider) {
    controller: 'editMenuController'
   }).
   when('/addnewdiet', {
-   templateUrl: 'html/addnewdiet.html'
+   templateUrl: 'html/addnewdiet.html'//,
+   //controller: 'addDietController'
   }).
   when('/addnewresource', {
    templateUrl: 'html/addnewresource.html'
@@ -47,13 +48,14 @@ mainApp.config(function($routeProvider) {
    $scope.menus = response.data;
   });
   $scope.deleteMenu = function() {
-   $http.delete('/menus/' + $scope.x.menu_id)
-    .success(function(response, status, headers, config) {})
-    .error(function(response, status, headers, config) {
-     $scope.error_message = response.error_message;
+   $http.delete('/menus/' + $scope.x.menu_id).then(function(del) {
+       $http.get('/menus').then(function(response) {
+           $scope.menus = response.data;
+       });
     });
   }
  }]);
+
  
  
  
@@ -84,7 +86,16 @@ mainApp.controller('dietsController', ['$scope', '$http', function($scope, $http
   $http.get('/diets').then(function(response) {
    $scope.diets = response.data;
   });
+   // $scope.updateDiet = function() {
+   //    setTimeout('', 3000);
+   //    $http.get('/diets').then(function(response) {
+   //     $scope.diets = response.data;
+   //    });
+    
+   // }
  }]);
+ 
+ 
 
  mainApp.controller('resourcesController', ['$scope', '$http', function($scope, $http) {
   $http.get('/resources').then(function(response) {
